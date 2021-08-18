@@ -19,9 +19,9 @@ async function startApolloServer() {
     });
     await server.start();
     const app = express();
-    // app.use(cors());
+    app.use(cors());
     app.use(compression());
-    server.applyMiddleware({ app, path: '/graphql', cors: true});
+    server.applyMiddleware({ app, path: '/graphql' });
     app.listen({ port: process.env.PORT || 4000 });
 }
 
