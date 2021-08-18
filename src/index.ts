@@ -17,7 +17,6 @@ async function startApolloServer() {
                 peopleAPI: new PeopleAPI(),
             };
         },
-        introspection: true,
     });
     await server.start();
     const app = express();
